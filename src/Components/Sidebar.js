@@ -7,6 +7,7 @@ import {
     MdSettings,
 } from "react-icons/md";
 import { RiMoonClearFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,11 @@ const Sidebar = () => {
         { spacer: true },
         { title: "Settings", icon: <MdSettings></MdSettings> },
     ];
+
+    // let navigate = useNavigate();
+    // const routeChange = (route) => {
+    //     navigate(`/${route}`);
+    // };
 
     return (
         <div
@@ -48,13 +54,13 @@ const Sidebar = () => {
                     <FaFireAlt></FaFireAlt>
                 </div>
                 <div className="max-h-10">
-                  <h3
-                      className={`text-custom-primary origin-left font-medium text-xl transition-all duration-300 ${
-                          !isOpen && "scale-0"
-                      }`}
-                  >
-                      Health Tracker
-                  </h3>
+                    <h3
+                        className={`text-custom-primary origin-left font-medium text-xl transition-all duration-300 ${
+                            !isOpen && "scale-0"
+                        }`}
+                    >
+                        Health Tracker
+                    </h3>
                 </div>
             </div>
             <ul>
@@ -62,27 +68,36 @@ const Sidebar = () => {
                     if (!menu.spacer) {
                         return (
                             <li
-                                className={`text-custom-primary text-3xl flex items-center gap-x-4 cursor-pointer p-2 hover:bg-neutral-700 rounded-lg mt-10
+                                className={`text-custom-primary text-3xl cursor-pointer p-2 hover:bg-neutral-700 rounded-lg mt-10
                                 }`}
                                 key={index}
+                                // onClick={() => {
+                                //     routeChange("/sleep");
+                                // }}
                             >
-                                <div className="grid place-items-center pl-[6px]">
-                                    {menu.icon}
-                                </div>
-                                <p
-                                    className={`text-gray-300 text-sm origin-left duration-75 ${
-                                        !isOpen && "hidden"
-                                    }`}
+                                <Link
+                                    to={`/${menu.title.toLowerCase()}`}
+                                    className="flex items-center gap-x-4"
                                 >
-                                    {menu.title}
-                                </p>
+                                    <div className="grid place-items-center pl-[6px]">
+                                        {menu.icon}
+                                    </div>
+                                    <p
+                                        className={`text-gray-300 text-sm origin-left duration-75 ${
+                                            !isOpen && "hidden"
+                                        }`}
+                                    >
+                                        {menu.title}
+                                    </p>
+                                </Link>
                             </li>
                         );
-                    }
-                    else{
-                      return <li>
-                        <hr className="w-full my-10" />
-                      </li>
+                    } else {
+                        return (
+                            <li>
+                                <hr className="w-full my-10" />
+                            </li>
+                        );
                     }
                 })}
             </ul>
