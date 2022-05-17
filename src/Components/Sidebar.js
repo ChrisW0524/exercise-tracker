@@ -15,14 +15,14 @@ const Sidebar = () => {
     const Menus = [
         { spacer: true },
         { title: "Dashboard", icon: <MdSpaceDashboard></MdSpaceDashboard> },
-        { spacer: true },
-        {
-            title: "Exercise",
-            icon: <MdOutlineSportsBasketball></MdOutlineSportsBasketball>,
-        },
+        // { spacer: true },
+        // {
+        //     title: "Exercise",
+        //     icon: <MdOutlineSportsBasketball></MdOutlineSportsBasketball>,
+        // },
 
-        { title: "Sleep", icon: <RiMoonClearFill></RiMoonClearFill> },
-        { spacer: true },
+        // { title: "Sleep", icon: <RiMoonClearFill></RiMoonClearFill> },
+        // { spacer: true },
         { title: "Settings", icon: <MdSettings></MdSettings> },
     ];
 
@@ -94,7 +94,7 @@ const Sidebar = () => {
                         );
                     } else {
                         return (
-                            <li>
+                            <li key={index}>
                                 <hr className="w-full my-10" />
                             </li>
                         );

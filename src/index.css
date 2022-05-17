@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* React-popup styles */
+.popup-content {
+    @apply m-auto bg-custom-primary w-1/2 p-2 rounded-lg shadow-2xl
+}
+.popup-arrow {
+    color: rgb(255, 255, 255);
+}
+[role="tooltip"].popup-content {
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+[data-popup="tooltip"].popup-overlay {
+    background: transparent;
+}
+
+.react-calendar-heatmap-month-label{
+    @apply text-sm
+}
+
+.react-calendar-heatmap-weekday-label{
+    @apply text-sm
+}
