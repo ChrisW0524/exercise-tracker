@@ -103,7 +103,6 @@ const CalendarDataDisplay = ({
             >
                 Change data
             </button>
-
         </div>
     );
 };

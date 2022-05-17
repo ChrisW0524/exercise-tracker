@@ -196,12 +196,6 @@ const Heatmap = ({ data_serialized, variable, title, tooltipText }) => {
                     }}
                 ></CalendarHeatmap>
                 <ReactTooltip />
-                <div className="flex">
-                    <p className="text-sm text-gray-500">
-                        Note that activity calculations are very much in
-                        development and will likely change in the near future.
-                    </p>
-                </div>
             </div>
         </div>
     );
